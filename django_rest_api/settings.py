@@ -83,15 +83,7 @@ WSGI_APPLICATION = "django_rest_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": dj_database_url.config(
-        os.environ.get(
-            "DATABASE_URL",
-            default="postgresql://postgres:postgres@localhost:5432/mysite",
-        ),
-        conn_max_age=600,
-    )
-}
+DATABASES = {"default": os.environ.get("DATABASE_URL")}
 
 
 # Password validation
