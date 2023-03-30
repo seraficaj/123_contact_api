@@ -83,7 +83,12 @@ WSGI_APPLICATION = "django_rest_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {"default": os.environ.get("DATABASE_URL")}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("DATABASE_URL"),
+    }
+}
 
 
 # Password validation
