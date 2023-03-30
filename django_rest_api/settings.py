@@ -30,7 +30,7 @@ DEBUG = "RENDER" not in os.environ
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')if RENDER_EXTERNAL_HOSTNAME:    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 
 
 # Application definition
@@ -85,10 +85,10 @@ WSGI_APPLICATION = "django_rest_api.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-    os.environ.get(
-        "DATABASE_URL",
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600    
+        os.environ.get(
+            "DATABASE_URL",
+            default="postgresql://postgres:postgres@localhost:5432/mysite",
+            conn_max_age=600,
         )
     )
 }
